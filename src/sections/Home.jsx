@@ -57,7 +57,7 @@ const Home = () => {
         <div className='absolute bottom-0 right-0 w[70vw] sm:w-[z-500vw] md:w-[40vw] h-[70vw] sm:h-[50vw] md:h-[40vw] max-w-125 max-h-125 rounded-full bg-linear-to-r from-[#303b63] via-[#00bf8f] to-[#1cd8d2] opacity-30 sm:opacity-20 md:opacity-10 blur-[100px] sm:blur-[130px] md:blur-[150px] animate-pulse delay-500'  ></div>
       </div>
 
-      <div className='relative z-10 h-full w-full max-w7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2'>
+      <div className='relative z-10 h-full w-full max-w-7xl mx-auto px-4 pt-24 md:pt-28 grid grid-cols-1 lg:grid-cols-2'>
         <div className='flex flex-col justify-center h-full text-center lg:text-left relative'>
           <div className='w-full lg:pr-24 mx-auto max-w-3xl'>
             <motion.div

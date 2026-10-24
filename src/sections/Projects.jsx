@@ -30,13 +30,13 @@ const Projects = () => {
   const projects = useMemo(() => [
     {
       title: "FixitNow",
-      link: "https://www.fixitNow.in",     // Paste here the deployed link of the project
+      link: "https://github.com/Karan420057/FixitNow.git",     // Paste here the deployed link of the project
       bgColor: "#13383d",
       image: isMobile ? photo1 : img1,
     },
     {
       title: "Job-Hunt",
-      link: "https://www.jobhunter.in",     // Paster here the deployed link of the project
+      link: "https://github.com/Karan420057/Job_Hunter.git",     // Paster here the deployed link of the project
       bgColor: "#7209b7",
       image: isMobile ? photo2 : img2,
     }
@@ -69,7 +69,7 @@ const Projects = () => {
       }}
     >
       <div className='sticky top-0 h-screen flex flex-col items-center justify-center'>
-        <h2 className={`text-3xl font-semibold z-10 text-center ${isMobile ? "mt-4" : "mt-8"}`}>My Work</h2>
+        <h1 className={`text-3xl font-semibold z-10 text-center ${isMobile ? "mt-4" : "mt-8"}`}>My Work</h1>
         <div className={`relative w-full flex-1 flex items-center justify-center ${
           isMobile ? "-mt-4" : ""
         }`}>
@@ -83,25 +83,29 @@ const Projects = () => {
             >
               <AnimatePresence mode="wait">
                 {activeIndex === idx && (
-                  <motion.h3 
+                  <motion.h2 
                     key={project.title}
                     initial={{opacity: 0, y: -30}}
                     animate={{opacity: 1, y: 0}}
                     exit={{opacity: 0, y: 30}}
-                    transition={{duration: -.5, ease: "easeOut"}}
+                    transition={{duration: 0.5, ease: "easeOut"}}
                     className={`
-                      block text-center text-[clamp(2rem,6vw,5rem)] text-white/95 sm:absolute sm:-top-20 sm:left-[35%] lg:left-[-5%] sm:mb-0
-                      italic font-semibold ${
-                        isMobile ? "-mt-24" : ""
-                      }
+                      block text-center
+                      text-[clamp(2rem,6vw,5rem)]
+                      text-white/95 italic font-semibold
+                      mb-6
+                      sm:absolute sm:-top-28 sm:left-[35%] lg:left-[-5%]
+                      sm:mb-0
+                      ${isMobile ? "-mt-16" : ""}
                     `}
+
                   >
                     {project.title}
-                  </motion.h3>
+                  </motion.h2>
                 )}
               </AnimatePresence>
 
-              <div 
+              {/* <div 
                 style={{
                   zIndex: 10,
                   transition: "box-shadow 250ms ease",
@@ -133,13 +137,46 @@ const Projects = () => {
                 >
 
                 </div>
+              </div> */}
+
+              
+              <div
+                style={{
+                  zIndex: 10,
+                  transition: "box-shadow 250ms ease",
+                }}
+                className={`
+                  relative w-full flex items-center justify-center
+                  mb-8 sm:mb-12
+                  overflow-hidden
+                  ${isMobile ? "rounded-lg" : "rounded-xl"}
+                `}
+                            >
+                  <img src={project.image} alt={project.title} className=" block w-full h-auto max-h-[55vh] sm:max-h-[60vh] lg:max-h-[65vh] object-contain rounded-lg "
+                  style={{
+                    position: "relative",
+                    zIndex: 10,
+                  }}
+                  loading="lazy"
+                  />
+
+                <div
+                  style={{
+                    zIndex: 11,
+                    background:
+                      "linear-gradient(180deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0) 40%)",
+                  }}
+                  className="pointer-events-none absolute inset-0"
+                />
               </div>
             </div>
           ))}
         </div>
 
-        <div className={`absolute ${isMobile ? 'bottom-20' : 'bottom-10'}`}>
-          <a href={activeProject?.link} target="_blank" rel="noopener noreferrer" className='inline-block px-6 py-3 font-semibold rounded-lg bg-white text-black hover:bg-gray-200 transition-all' aria-label={`View ${activeProject?.title}`}>ViewProject</a>
+        <div className={` absolute left-1/2 -translate-x-1/2 ${isMobile ? "bottom-8" : "bottom-6"}`}>
+          <a href={activeProject?.link} target="_blank" rel="noopener noreferrer" className=" inline-block px-8 py-3 font-semibold rounded-lg bg-white text-black hover:bg-gray-200 hover:scale-105 transition-all duration-300" aria-label={`View ${activeProject?.title}`}>
+            View Project
+          </a>
         </div>
       </div>
     </section>
